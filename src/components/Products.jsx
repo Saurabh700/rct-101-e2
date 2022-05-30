@@ -1,14 +1,19 @@
 import React from "react";
 
-const Products = () => {
+const Products = ({ prodData }) => {
+  console.log(prodData, "inside products");
   // TODO: Remove below const and instead import them from chakra
   const Flex = () => <div />;
   const Grid = () => <div />;
-
   return (
     <Flex>
       {/*  AddProduct */}
-      <Grid>{/* List of Products */}</Grid>
+      <Grid>
+        {prodData.map((prod) => {
+          <div>{prod.title}</div>;
+          <div>{prod.category}</div>;
+        })}
+      </Grid>
       {/* Pagination */}
     </Flex>
   );
